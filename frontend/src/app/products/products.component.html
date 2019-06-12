@@ -1,7 +1,27 @@
-<div class="card" *ngFor="let data of produits, let i = index">
-    
+<form [formGroup]="produitForm" (ngSubmit)="onSubmitForm()">
+  <div>
+    <label for="titre">titre: </label>
+    <input type="text" name="titre" id="titre" required formControlName="titre">
+  </div>
+  <label for="resum">resum</label>
+  <textarea id="resum" name="resum" rows="5" cols="33" formControlName="resum">
+    </textarea>
+  <div>
+    <label for="fileName">fileName: </label>
+    <input type="text" name="fileName" id="fileName" required formControlName="fileName">
+  </div>
+  <div>
+    <label for="time">time: </label>
+    <input type="text" name="time" id="time" required formControlName="time">
+  </div>
+  <div>
+    <input type="submit" value="Subscribe!" />
+  </div>
+</form>
+
+<div class="card" *ngFor="let data of produits, let i = index"> 
     <div class="container">
       <h4><b>{{ data.titre }}</b></h4>
       <p>{{ data.synopsis }}</p>
     </div>
-</div> 
+</div>

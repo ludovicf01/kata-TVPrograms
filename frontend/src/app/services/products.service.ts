@@ -9,12 +9,19 @@ import { Produit } from '../models/produit.model';
 })
 export class ProductsService {
 
-  constructor(private http: HttpClient) { }
+  produits: Produit[]; 
+
+  constructor(private httpClient: HttpClient) { }
 
   configUrl = 'http://localhost:3000/produits';
   // configUrl = 'assets/produits.json'
 
   getProduct(): Observable<Produit[]> {
-    return this.http.get<Produit[]>(this.configUrl);
+    return this.httpClient.get<Produit[]>(this.configUrl);
+  }
+
+  saveProduitsToServer(produit) {
+    return this.httpClient
+      .put('http://localhost:3000/produits', produit);
   }
 }
