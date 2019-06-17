@@ -7,11 +7,13 @@ import { ProductsComponent } from './products/products.component';
 import { ProductsService } from './services/products.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavComponent } from './share/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

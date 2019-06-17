@@ -19,9 +19,23 @@
   </div>
 </form>
 
-<div class="card" *ngFor="let data of produits, let i = index"> 
+<!-- <div class="card" *ngFor="let data of produits, let i = index"> 
     <div class="container">
       <h4><b>{{ data.titre }}</b></h4>
       <p>{{ data.synopsis }}</p>
     </div>
+</div> -->
+<div class="container">
+  <div class="row card-group">
+    <div class="col-sm-12 col-md-6 col-lg-4 text-center" *ngFor="let data of produits, let i = index">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ data.titre }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">{{ data.synopsis }}</p>
+          <a href="../{{ data.fileName }}" class="card-link">{{ data.fileName }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
